@@ -340,4 +340,4 @@ print(s[-4:])  # .png
 # 마무리
 
 오늘은 마크다운, 주석, 입출력, 정수 자료형, 실수 자료형, 문자열 자료형에 대해 배웠다.
-![노을](https://images.unsplash.com/photo-1586348943529-beaae6c28db9?q=80&w=2515&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+![여름](https://images.unsplash.com/photo-1586902197503-e71026292412?q=80&w=2672&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
