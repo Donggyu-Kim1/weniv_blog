@@ -1,5 +1,5 @@
-# test1 제목입니다. 테스트 파일입니다.
-
-* hello world 1
-hello world 2
-hello world 3
+# 1일차 강의 정리
+'![나무]("img/나무.png")'
+## *오늘의 상식*
+- 엔비디아, MS 애플 제치고 첫 시총 1위 달성
+- 
