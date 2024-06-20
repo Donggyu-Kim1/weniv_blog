@@ -211,12 +211,233 @@ print(f"치환된 문자는 다음과 같습니다. \"{sentence.replace(word, ne
 - 덧셈, 곱셈 연산 가능 
 
 ```
-print(1 == 1)   #
-print(1 == 2)   #
-print(True == 1) #   
-print(False == 0) #  
-print(True + 1) #
-print(False + 1)    
-print(True * 5) 
-print(False * 5)    
+print(1 == 1)   # 출력 값: True
+print(1 == 2)   # 출력 값: False
+print(True == 1) # 출력 값: True
+print(False == 0) # 출력 값: False
+print(True + 1) # 출력 값: 2
+print(False + 1)    # 출력 값: 1
+print(True * 5) # 출력 값: 5
+print(False * 5)    # 출력 값: 1
 ```
+
+## None 자료형
+![None을 설명하는 사진](https://cdn.discordapp.com/attachments/1232959571119833103/1253173964465901568/image.png?ex=6674e4b3&is=66739333&hm=66a2899c6f3414bd9d078b730a5c5aa59c5b5a5fe2a1d9d7c04cb2029b794d0e&)
+
+위 사진처럼 
+- 0의 경우: 값이 존재하지만 그 값이 0인 경우
+- null(None): 빈 공간, 값이 존재하지 않음
+- undefined: 정의되지 않음.
+- NaN: 잘못된 값
+을 의미함
+
+```
+# 비어 있다, 아무것도 없다, 정보가 없다를 표현할 때 None
+# None != 0
+# 사칙연산 안됨
+# None 값을 찾기 위해선 == 이 아닌 is None 을 사용하는 것을 권장
+
+x = None
+
+print(x is None)    # 출력 값: True
+
+print(dir(None))
+# 출력 값: ['__bool__', '__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__']
+```
+
+## 형변환
+
+```
+wage = input("월급을 입력하세요: ")
+print(type(wage))   # 출력 값: <class 'str'>
+
+wage = int(wage)
+print(type(wage))   # 출력 값: <class 'int'>
+
+annual_salary = wage * 12
+print(annual_salary)    # 출력 값: 3600
+```
+
+## 연산자
+
+**연산자 종류**
+- 산술연산자, 대입연산자(할당연산자), 비교연산자, 논리연산자, 비트연산자, 멤버연산자, 식별연산자
+
+### 산술연산자
+
+```
+# 합
+# 문자열 간, 실수 + 정수 가능
+# set의 경우, 합집합, 차집합으로 적용됨
+# 대시 기호 잘 사용하기
+
+print(7 - 4)    # 출력 값: 3
+print(7 -- 4)   # 출력 값: 11
+print(7 --- 4)  # 출력 값: 3
+```
+
+```
+# 나눗셈은 0으로 못 나눔
+
+x =10
+z = 0
+# x / z -> ZeroDivisionError 발생
+```
+
+```
+a = 10
+b = 3
+
+divide = a / b
+
+print(f'{a} ÷ {b} = {divide:.2f}')  # 출력 값: 10 ÷ 3 = 3.33
+
+# .nf : 소수점 n번째자리까지 나타내줌 
+```
+
+```
+print(-2 ** 2)  # 출력 값: -4
+# 괄호로 묶지 않으면 제곱을 먼저 하고 마이너스를 붙이는 연산을 하게 됨
+
+print((-2)**2)  # 출력 값: 4
+```
+
+### 비교연산자
+
+- True 인지 False 인지 알 수 있게 하는 연산자
+
+```
+# 비교연산자 종류
+
+print(1 > 2)    # 출력 값: False
+print(1 < 2)    # 출력 값: True
+print(1 >= 2)   # 출력 값: False
+print(1 <= 2)   # 출력 값: True
+print(1 == 2)   # 출력 값: False
+print(1 != 2)   # 출력 값: True
+```
+
+```
+# 문자열도 가능하지만 유니코드를 알아야 함
+print('banana' < 'apple')   # 출력 값: False 
+
+# 자리수가 많을수록 큰 수가 할당됨
+print('abcd' > 'abcda')  # 출력 값: False
+```
+
+### 논리연산자
+
+- and: 모두 참이어야 True, 하나만 참일 경우 False
+- or: 하나만 참이어도 True, 모두 거짓이어야 False
+- not: 부정
+
+```
+print(True and False)   # 출력 값: False 
+print(True or False)    # 출력 값: True
+print(not True)         # 출력 값: False
+```
+
+#### 단락 평가
+
+- 단락 평가(또는 단락 연산)는 논리 연산에서 연산의 결과가 **확정된 시점에서 더 이상의 평가를 중단**하는 방법
+- and의 경우, 앞에 False가 나오면 False를 반환하고 뒤에 함수를 수행하지 않음
+- or의 경우, 앞에 True가 나오면 True를 반환하고 뒤에 함수를 수행하지 않음
+
+```
+def test1():
+    print("test1 함수 호출!")
+    return False
+
+def test2():
+    print("test2 함수 호출!")
+    return True
+
+result = test1() and test2()
+print(result)  
+# 출력 값: test1 함수 호출!, False, "test2 함수 호출!" 가 출력되지 않음. 
+```
+
+### 할당연산자
+
+- 변수에 값을 저장하는 데 사용
+- 할당 연산자의 우선순위는 대부분의 다른 연산자들보다 낮음 -> 마지막으로 평가
+
+```
+x = 5
+y = 2
+z = 10
+
+x += y * z  # y * z 연산 후 x에 값을 할당(+ 5)
+
+print(x)  # 출력 값: 25
+```
+
+### 식별연산자
+
+- 식별 연산자는 두 변수가 동일한 객체를 참조하고 있는지 확인하는데 사용
+- is / is not
+
+| 연산자 | 의미 | 결과 |
+|---|---|---|
+| `is` | 두 변수가 **같은 메모리 위치**를 가리키는지 확인 | **True**: 같은 위치를 가리킬 때, **False**: 다른 위치를 가리킬 때 |
+| `is not` | 두 변수가 **다른 메모리 위치**를 가리키는지 확인 | **True**: 다른 위치를 가리킬 때, **False**: 같은 위치를 가리킬 때 |
+
+```
+a = [1, 2, 3]
+b = [1, 2, 3]
+c = a
+
+print(id(a), id(b), id(c))  
+# 출력 값: 134749702525056 134748881893440 134749702525056
+# a 와 b의 주소가 다른 것을 알 수 있음
+
+print('a == b', a == b) # 출력 값: True
+print('a == c', a == c) # 출력 값: True
+print('a is b', a is b) # 출력 값: False
+print('a is c', a is c) # 출력 값: True
+```
+
+### 맴버연산(in 구문)
+
+- 어떤 값이 목록 안에 있는지 확인해주는 기능
+
+|연산자|의미|
+|---|---|
+| in |	값이 목록 안에 있으면 참(True)이에요.|
+| not in |	값이 목록 안에 없으면 참(True)이에요.|
+
+```
+fruits = ["사과", "바나나", "포도"]
+
+print("사과" in fruits)  # True, 사과가 목록에 있음
+print("오렌지" not in fruits)  # True, 오렌지는 목록에 없음
+```
+
+### 연산과 연산자 우선순위
+
+- 여러 연산자가 하나의 표현식(expression) 내에 있을 때 어떤 연산자가 먼저 계산되는지를 결정
+
+| 우선순위 | 연산자 | 설명 | 예시 |
+|---|---|---|---|
+| 1 | `(값…), {값…}, [값…], {키:값…}` | 튜플, 셋, 리스트, 딕셔너리 생성 | `(1, 2, 3)`, `{1, 2, 3}`, `[1, 2, 3]`, `{‘name’: ‘Alice’, ‘age’: 30}` |
+| 2 | `x[인덱스], x[인덱스:인덱스], x(인수…), x.속성` | 리스트와 튜플 인덱싱, 슬라이싱, 함수 호출, 속성 참조 | `my_list[0]`, `my_list[1:3]`, `my_function(1, 2)`, `my_object.attribute` |
+| 3 | `await x` | await 표현식 | `await my_async_function()` |
+| 4 | `**` | 거듭제곱 | `2 ** 3` (2의 3승) |
+| 5 | `+, -, ~` | 부호, 비트 NOT | `-5`, `~10` |
+| 6 | `*, /, //, %, @` | 곱하기, 나누기, 내림 나눗셈, 나머지, 행렬 곱셈 | `2 * 3`, `10 / 3`, `10 // 3`, `10 % 3`, `numpy.array([[1, 2], [3, 4]]) @ numpy.array([[5, 6], [7, 8]])` |
+| 7 | `+, -` | 더하기, 빼기 | `2 + 3`, `5 - 2` |
+| 8 | `<<, >>` | 쉬프트 연산 | `10 << 2`, `10 >> 2` |
+| 9 | `&` | 비트연산 AND | `10 & 5` |
+| 10 | `^` | 비트연산 OR | `10 ^ 5` |
+| 11 | `in, not in, is, is not, <, ≤, >, ≥, ==, !=` | 멤버 연산자, 식별 연산자, 비교 연산자 | `1 in [1, 2, 3]`, `1 not in [1, 2, 3]`, `a is b`, `a is not b`, `1 < 2`, `1 <= 2`, `1 > 2`, `1 >= 2`, `1 == 2`, `1 != 2` |
+| 12 | `not` | 논리 부정 | `not True` |
+| 13 | `and` | 논리 AND | `True and False` |
+| 14 | `or` | 논리 OR | `True or False` |
+| 15 | `if else` | 조건부 표현식 | `x if x > 0 else -x` |
+| 16 | `lambda` | 람다 표현식 | `lambda x: x ** 2` |
+| 17 | `:=` | 할당 표현식 | `x := 10` |
+
+# 마무리
+문자열을 변환해주는 다양한 함수, 연산자에 대해 배웠다.
+
+![moon](https://images.unsplash.com/photo-1532767153582-b1a0e5145009?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
