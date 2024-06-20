@@ -207,3 +207,16 @@ print(f"치환된 문자는 다음과 같습니다. \"{sentence.replace(word, ne
 ```
 
 ## 논리(bool) 자료형
+- True or False
+- 덧셈, 곱셈 연산 가능 
+
+```
+print(1 == 1)   #
+print(1 == 2)   #
+print(True == 1) #   
+print(False == 0) #  
+print(True + 1) #
+print(False + 1)    
+print(True * 5) 
+print(False * 5)    
+```
