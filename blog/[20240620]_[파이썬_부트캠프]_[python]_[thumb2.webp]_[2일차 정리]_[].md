@@ -222,7 +222,7 @@ print(False * 5)    # 출력 값: 1
 ```
 
 ## None 자료형
-![None을 설명하는 사진](https://cdn.discordapp.com/attachments/1232959571119833103/1253173964465901568/image.png?ex=6674e4b3&is=66739333&hm=66a2899c6f3414bd9d078b730a5c5aa59c5b5a5fe2a1d9d7c04cb2029b794d0e&)
+![None을 설명하는 사진](https://i.imgur.com/vxYZlJg.jpg)
 
 위 사진처럼 
 - 0의 경우: 값이 존재하지만 그 값이 0인 경우
