@@ -3,6 +3,7 @@
 ## 오늘의 상식
 
 **AI 스타트업 창업 시 주의할 점**
+
 [AI 스타트업을 구축하는 방법](https://www.news.aakashg.com/p/how-to-build-an-ai-startup)을 보고 참고했음
 
 1. 아이디어는 쉽게 실행 가능해야 함
