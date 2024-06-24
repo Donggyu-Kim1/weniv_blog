@@ -2,9 +2,12 @@
 
 ## 오늘의 상식
 **AI 스타트업 창업 시 주의할 점**
-- [AI 스타트업을 구축하는 방법](https://www.news.aakashg.com/p/how-to-build-an-ai-startup)
-- 아이디어는 쉽게 실행 가능해야 함
-- 함정
+
+* [AI 스타트업을 구축하는 방법](https://www.news.aakashg.com/p/how-to-build-an-ai-startup)
+
+* 아이디어는 쉽게 실행 가능해야 함
+
+* 함정
   1. 반짝이는 증후군
     - 새 모델 출시 시 방향을 바꾸고 싶은 유혹(피벗)
 
